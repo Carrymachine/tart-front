@@ -28,11 +28,11 @@ const renderBestProduct = () => {
   });
 
   console.log(CategoryList);
-  if (recommend.length === 0) {
-    for (let i = 0; i <= 2; i++) {
-      recommend.push(data.splice(Math.floor(Math.random() * data.length), 1)[0]);
-    }
-  }
+  // if (recommend.length === 0) {
+  //   for (let i = 0; i <= 2; i++) {
+  //     recommend.push(data.splice(Math.floor(Math.random() * data.length), 1)[0]);
+  //   }
+  // }
   console.log(toggle);
   if (!isLoading)
     return (
@@ -52,7 +52,7 @@ const renderBestProduct = () => {
           <SwipWrap>
             <Swiper>
               <CardContainer>
-                <RenderCard data={recommend} />
+                <RenderCard data={data} />
               </CardContainer>
             </Swiper>
           </SwipWrap>

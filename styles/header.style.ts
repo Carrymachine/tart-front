@@ -88,4 +88,28 @@ const Login = styled("div")`
   }
 `;
 
-export { Header, HeaderWrap, NavWrap, Nav, SearchWrap, Search, Login };
+const SearchModal = styled("div")`
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 111;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  gap: 32px;
+  background-color: rgb(255, 255, 255);
+`;
+
+const ModalContents = styled("div")`
+  max-width: 1440px;
+  padding: 32px 120px;
+  margin: 0px auto;
+`;
+const CloseModal = styled("div")`
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin-left: 100%;
+`;
+
+export { SearchModal, Header, HeaderWrap, NavWrap, Nav, SearchWrap, Search, Login, ModalContents, CloseModal };
