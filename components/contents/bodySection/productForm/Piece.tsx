@@ -1,4 +1,4 @@
-import { OpenText, CardForm, CardWrap, ImgWrap, InfoContainer, InfoWrap, InfoTag, InfoNameContainer, PriceTable, TableItem } from "styles/contents/bodySection/public.style";
+import { OpenText, InfoContainer, InfoTag, InfoNameContainer } from "styles/contents/bodySection/public.style";
 import { IProducts } from "utils/interface/products";
 const renderPieceCard = (product: IProducts) => {
   return (

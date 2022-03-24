@@ -1,5 +1,4 @@
 import { useQuery } from "react-query";
-import store from "pages/api/fetch/store";
 import { IProducts } from "utils/interface/products";
 
 const fetchSearchProduct = async () => {
@@ -7,7 +6,7 @@ const fetchSearchProduct = async () => {
   console.log(response);
 
   const filteredRes = response.filter((product: IProducts) => product.tag === "NFT");
-  store.data = response;
+
   return filteredRes;
 };
 

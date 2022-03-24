@@ -1,11 +1,10 @@
 import { useQuery } from "react-query";
-import store from "pages/api/fetch/store";
 import { IProducts } from "utils/interface/products";
 
 const fetchAllProduct = async (tag: string) => {
   const response = await (await fetch("http://localhost:3000/api/getAllProduct")).json();
   let result;
-  store.data = response;
+
   switch (tag) {
     case "모든 투자상품" || "":
       return (result = response);
@@ -29,8 +28,7 @@ const fetchAllProduct = async (tag: string) => {
       return (result = response.filter((product: IProducts) => product.tag === "비상장주식"));
       break;
   }
-  console.log(tag);
-  console.log(result);
+
   return result;
 };
 

@@ -4,8 +4,6 @@ import BestProduct from "components/contents/bodySection/bestProduct";
 import NotableNFT from "components/contents/bodySection/notableNFT";
 import ServiceSection from "components/contents/bodySection/serviceSection";
 
-import { usePickProduct } from "pages/api/fetch/fetchPickProduct";
-
 const renderBodySection = () => {
   return (
     <div>

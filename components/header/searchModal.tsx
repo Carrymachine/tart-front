@@ -1,14 +1,13 @@
 import { ModalSearchInputWrap, InputContainer, ModalInput, RecommendWrap, RecommendItemForm } from "styles/contents/headSection/modal.style";
 import { useState } from "react";
-import { useSearchProduct, fetchSearchProduct } from "pages/api/fetch/fetchSearchProduct";
+import { useSearchProduct } from "pages/api/fetch/fetchSearchProduct";
 import { IProducts } from "utils/interface/products";
 const renderModal = () => {
   const [typedKeyWord, setTyped] = useState<string>("");
   const { isLoading, error, data } = useSearchProduct();
   const body = document.querySelector("body") as HTMLBodyElement;
   body.style.overflow = "hidden";
-  console.log(body);
-  let recommend: IProducts[] = [];
+
   if (isLoading) return <></>;
 
   const changeInputValue = () => {};

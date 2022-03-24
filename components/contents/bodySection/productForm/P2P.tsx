@@ -1,4 +1,4 @@
-import { OpenText, CardForm, CardWrap, ImgWrap, InfoContainer, InfoWrap, InfoTag, InfoNameContainer, PriceTable, TableItem } from "styles/contents/bodySection/public.style";
+import { InfoContainer, InfoTag, InfoNameContainer } from "styles/contents/bodySection/public.style";
 import { P2PInfo } from "styles/contents/bodySection/P2P.style";
 import { IProducts } from "utils/interface/products";
 const renderP2PCard = (product: IProducts) => {

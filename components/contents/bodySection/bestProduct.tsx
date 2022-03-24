@@ -2,27 +2,18 @@ import { IProducts } from "utils/interface/products";
 import { ProductViewContainer, CardContainer } from "styles/contents/bodySection/public.style";
 import { SwipWrap, Swiper } from "styles/contents/bodySection/recommendProduct.style";
 import RenderCard from "components/contents/bodySection/productForm/index";
-import { useState, useEffect } from "react";
-import { fetchAllProduct, useAllProduct } from "pages/api/fetch/fetchAllProduct";
+import { useState } from "react";
+import { useAllProduct } from "pages/api/fetch/fetchAllProduct";
 import { ModalCategoryContainer, CategoryContainer, CategoryWrap, ModalCategoryWrap, CategoryItemForm } from "styles/contents/bodySection/bestProduct.style";
-import { usePickProduct, fetchPickProduct } from "pages/api/fetch/fetchPickProduct";
-type Products = {
-  best: IProducts[];
-};
+import { usePickProduct } from "pages/api/fetch/fetchPickProduct";
 
 const renderBestProduct = () => {
   const [currentBest, setBest] = useState<string>("모든 투자상품");
   const { isLoading, error, data } = useAllProduct(currentBest);
   const productLogo = usePickProduct();
-
-  const [toggle, setToggle] = useState<boolean>(false);
+  const tags: string[] = ["모든 투자상품", "NFT", "스니커즈 리셀", "조각투자", "P2P 투자", "스타트업 펀딩", "비상장주식"];
 
   if (isLoading) return <></>;
-
-  let recommend: IProducts[] = [];
-  let CategoryList = new Set<string>([]);
-
-  const tags: string[] = ["모든 투자상품", "NFT", "스니커즈 리셀", "조각투자", "P2P 투자", "스타트업 펀딩", "비상장주식"];
 
   const mouseOn = () => {
     const dropdown = document.getElementsByClassName("dropdown")[0] as HTMLDivElement;
@@ -36,12 +27,6 @@ const renderBestProduct = () => {
     dropdown.style.display = "none";
   };
 
-  // if (recommend.length === 0) {
-  //   for (let i = 0; i <= 2; i++) {
-  //     recommend.push(data.splice(Math.floor(Math.random() * data.length), 1)[0]);
-  //   }
-  // }
-  console.log(productLogo.data);
   return (
     <ProductViewContainer>
       <h2>

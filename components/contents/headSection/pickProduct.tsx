@@ -1,8 +1,7 @@
 import { PickProductContainer, ProductListContainer, ListWrap, ListItem, ItemWrap, TextWrap } from "styles/contents/headSection/pickProduct.style";
 import { IProductList } from "utils/interface/productList";
-import { useQuery } from "react-query";
 import { useState } from "react";
-import { usePickProduct, fetchPickProduct } from "pages/api/fetch/fetchPickProduct";
+import { usePickProduct } from "pages/api/fetch/fetchPickProduct";
 
 const renderPickProduct = () => {
   const { isLoading, error, data } = usePickProduct();

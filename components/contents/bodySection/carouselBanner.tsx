@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { IBannerList } from "utils/interface/bannerList";
 import { Swiper, CarouselBannerContainer, BannerItemContainer, Banner, TextWrap, ImgWrap, DueData } from "styles/contents/bodySection/slideBanner.style";
 
@@ -17,7 +17,6 @@ const renderCarouselBanner = () => {
     const Ref = document.getElementById("ref") as HTMLElement;
     if (Ref) {
       Ref.style.transition = "all 0.5s ease-in-out";
-      // ${(-100 / slideList.length) * (0.5 + currentSlide)}
       Ref.style.transform = `translateX(-${25 * currentSlide}%)`;
     }
   }, [currentSlide]);

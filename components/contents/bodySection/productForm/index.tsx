@@ -1,5 +1,5 @@
 import { IProducts } from "utils/interface/products";
-import { LogoView, ImgView, OpenText, CardForm, CardWrap, ImgWrap, InfoContainer, InfoWrap, InfoTag, InfoNameContainer, PriceTable, TableItem } from "styles/contents/bodySection/public.style";
+import { LogoView, ImgView, CardForm, CardWrap, ImgWrap, InfoWrap } from "styles/contents/bodySection/public.style";
 import RenderNFT from "components/contents/bodySection/productForm/NFT";
 import RenderSneakers from "components/contents/bodySection/productForm/Sneakers";
 import RenderPiece from "components/contents/bodySection/productForm/Piece";
