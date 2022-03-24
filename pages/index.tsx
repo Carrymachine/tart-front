@@ -20,18 +20,18 @@ const Home: NextPage = (props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
-  const queryClient = new QueryClient();
+// export const getStaticProps: GetStaticProps = async (ctx) => {
+//   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery(["allProduct"], async () => await fetchAllProduct());
+//   await queryClient.prefetchQuery(["allProduct"], ({) => fetchAllProduct());
 
-  console.log(queryClient);
+//   console.log(queryClient);
 
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
-};
+//   return {
+//     props: {
+//       dehydratedState: dehydrate(queryClient),
+//     },
+//   };
+// };
 
 export default Home;
