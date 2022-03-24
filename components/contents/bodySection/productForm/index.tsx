@@ -1,5 +1,5 @@
 import { IProducts } from "utils/interface/products";
-import { OpenText, CardForm, CardWrap, ImgWrap, InfoContainer, InfoWrap, InfoTag, InfoNameContainer, PriceTable, TableItem } from "styles/contents/bodySection/public.style";
+import { LogoView, ImgView, OpenText, CardForm, CardWrap, ImgWrap, InfoContainer, InfoWrap, InfoTag, InfoNameContainer, PriceTable, TableItem } from "styles/contents/bodySection/public.style";
 import RenderNFT from "components/contents/bodySection/productForm/NFT";
 import RenderSneakers from "components/contents/bodySection/productForm/Sneakers";
 import RenderPiece from "components/contents/bodySection/productForm/Piece";
@@ -35,12 +35,13 @@ const RenderProductCard = ({ data }: Product): JSX.Element => {
         categorizedCard = RenderStock(product);
         break;
     }
-
+    console.log(product?.tag);
     return (
       <CardWrap style={{ paddingBottom: "10px" }}>
         <CardForm>
-          <ImgWrap>
-            <img src={product?.imageSrc} />
+          <ImgWrap tags={product?.tag}>
+            <ImgView tags={product?.tag} src={product?.imageSrc} />
+            <LogoView src={product?.logoSrc} />
           </ImgWrap>
         </CardForm>
         <InfoWrap>{categorizedCard}</InfoWrap>

@@ -10,7 +10,7 @@ type Products = {
   best: IProducts[];
 };
 
-const renderBestProduct = (): JSX.Element => {
+const renderBestProduct = () => {
   const { isLoading, error, data } = useAllProduct();
   const [currentBest, setBest] = useState<string>("모든 투자상품");
   const [toggle, setToggle] = useState<boolean>(false);

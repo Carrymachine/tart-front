@@ -1,6 +1,10 @@
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 
+type Case = {
+  tags: string;
+};
+
 const ProductViewContainer = styled("div")`
   padding: 0px 120px;
   max-width: 1440px;
@@ -57,20 +61,26 @@ const CardForm = styled("div")`
 
 const ImgWrap = styled("div")`
   width: 100%;
-  padding: 78px;
+  padding: ${({ tags }: Case) => (tags === "NFT" || tags === "P2P 투자" || tags === "스타트업 펀딩" ? "0" : "78px")};
   background-color: rgb(244, 244, 244);
   height: 275px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+`;
 
-  & > img {
-    position: relative;
-    width: 100%;
-    min-height: 141px;
-    height: 141px;
-    object-fit: contain;
-    transition: all 0.5s ease 0s;
-    border-radius: 4px;
-  }
+const ImgView = styled("img")`
+  position: relative;
+  width: 100%;
+  height: ${({ tags }: Case) => (tags === "NFT" || tags === "P2P 투자" || tags === "스타트업 펀딩" ? "275px" : "141px")};
+  object-fit: ${({ tags }: Case) => (tags === "NFT" || tags === "P2P 투자" || tags === "스타트업 펀딩" ? "cover" : "contain")};
+`;
+const LogoView = styled("img")`
+  height: 18px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 1;
 `;
 
 const InfoWrap = styled("div")`
@@ -168,4 +178,4 @@ const OpenText = styled("div")`
   }
 `;
 
-export { OpenText, PriceTable, TableItem, ProductViewContainer, CardContainer, CardForm, CardWrap, ImgWrap, InfoContainer, InfoWrap, InfoTag, InfoNameContainer };
+export { LogoView, ImgView, OpenText, PriceTable, TableItem, ProductViewContainer, CardContainer, CardForm, CardWrap, ImgWrap, InfoContainer, InfoWrap, InfoTag, InfoNameContainer };
